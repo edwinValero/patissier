@@ -1,0 +1,46 @@
+{
+  "address": "123 Fictional Street, Springfield, USA",
+  "phone": "+1 (555) 123-4567",
+  "email": "hello@patissier.com",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2917.69719784343!2d-79.203017084523!3d43.12423197914309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b7efdb305cf%3A0xc869a2800b4e8610!2sJC%20Patissier!5e0!3m2!1sen!2sca!4v1623762383342!5m2!1sen!2sca",
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "9:00 AM - 5:00 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "9:00 AM - 5:00 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "9:00 AM - 5:00 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "9:00 AM - 5:00 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "9:00 AM - 5:00 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Instagram",
+      "href": "https://www.instagram.com/jcpatissier_cafe"
+    },
+    {
+      "name": "Facebook",
+      "href": "https://www.facebook.com/JcPatissierCafe"
+    }
+  ]
+}

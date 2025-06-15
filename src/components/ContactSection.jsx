@@ -1,28 +1,43 @@
 import React from 'react';
-import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+  Twitter,
+} from 'lucide-react';
+import businessData from '../data/business_data.json';
+
+// Helper to get the correct icon component
+const getIcon = (name) => {
+  switch (name) {
+    case 'Instagram':
+      return <Instagram className='w-7 h-7' />;
+    case 'Facebook':
+      return <Facebook className='w-7 h-7' />;
+    case 'Twitter':
+      return <Twitter className='w-7 h-7' />;
+    default:
+      return null;
+  }
+};
 
 const ContactSection = () => {
+  const { address, phone, email, socialLinks } = businessData;
+
   const contactInfo = [
     {
       icon: <MapPin className='w-6 h-6 text-color1' />,
-      text: '33 Front St S, Thorold, ON L2V 1W8',
+      text: address,
     },
     {
       icon: <Phone className='w-6 h-6 text-color1' />,
-      text: '+1 (289) 396-8454',
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: <Instagram className='w-7 h-7' />,
-      href: 'https://www.instagram.com/jcpatissier_cafe',
-      label: 'Instagram',
+      text: phone,
     },
     {
-      icon: <Facebook className='w-7 h-7' />,
-      href: 'https://www.facebook.com/JcPatissierCafe',
-      label: 'Facebook',
+      icon: <Mail className='w-6 h-6 text-color1' />,
+      text: email,
     },
   ];
 
@@ -60,10 +75,10 @@ const ContactSection = () => {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={social.label}
+                  aria-label={social.name}
                   className='text-color2 hover:text-color1 transition-transform duration-300 transform hover:scale-125'
                 >
-                  {social.icon}
+                  {getIcon(social.name)}
                 </a>
               ))}
             </div>
