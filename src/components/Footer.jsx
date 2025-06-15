@@ -81,7 +81,6 @@ const Footer = () => {
               <Linkedin className='w-5 h-5' />
             </a>
           </div>
-          <p className='mt-2'>Crafted with AI assistance.</p>
         </div>
       </div>
     </footer>
