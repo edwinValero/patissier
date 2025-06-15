@@ -1,0 +1,258 @@
+{
+  "drinks": {
+    "coffee": [
+      {
+        "id": 1,
+        "nombre": "Fresh Brewed Dark Roast",
+        "precio": "2.50"
+      },
+      {
+        "id": 2,
+        "nombre": "Caffe Au Lait",
+        "precio": "3.00"
+      },
+      {
+        "id": 3,
+        "nombre": "Espresso (Single - Double)",
+        "precio": "2.00"
+      },
+      {
+        "id": 4,
+        "nombre": "Caffe Americano",
+        "precio": "2.50"
+      },
+      {
+        "id": 5,
+        "nombre": "Cappuccino",
+        "precio": "3.50"
+      },
+      {
+        "id": 6,
+        "nombre": "Caffe Latte",
+        "precio": "3.50"
+      },
+      {
+        "id": 7,
+        "nombre": "Vanilla Latte",
+        "precio": "4.00"
+      },
+      {
+        "id": 8,
+        "nombre": "Caramel Latte",
+        "precio": "4.00"
+      },
+      {
+        "id": 9,
+        "nombre": "Matcha Latte",
+        "precio": "4.50"
+      },
+      {
+        "id": 10,
+        "nombre": "Mocha Latte",
+        "descripcion": "(Milk, Dark, White Chocolate)",
+        "precio": "4.00"
+      }
+    ],
+    "decaf_option": [
+      {
+        "id": 11,
+        "nombre": "Dandelion Tea"
+      },
+      {
+        "id": 12,
+        "nombre": "Natural Decaffeinated Tea Root"
+      }
+    ],
+    "hot_chocolate": [
+      {
+        "id": 13,
+        "nombre": "Milk Hot Chocolate",
+        "precio": "3.50"
+      },
+      {
+        "id": 14,
+        "nombre": "Dark Hot Chocolate",
+        "precio": "3.50"
+      },
+      {
+        "id": 15,
+        "nombre": "White Hot Chocolate",
+        "precio": "3.50"
+      }
+    ],
+    "tea": {
+      "non_herbal_tea": [
+        {
+          "id": 16,
+          "nombre": "Black Yorkshire Harrogate"
+        },
+        {
+          "id": 17,
+          "nombre": "Cream of Earl Gray"
+        },
+        {
+          "id": 18,
+          "nombre": "Chai"
+        },
+        {
+          "id": 19,
+          "nombre": "Green Jasmine"
+        }
+      ],
+      "herbal_tea": [
+        {
+          "id": 20,
+          "nombre": "Chamomile"
+        },
+        {
+          "id": 21,
+          "nombre": "Cherry Rose Green"
+        },
+        {
+          "id": 22,
+          "nombre": "GingerH"
+        },
+        {
+          "id": 23,
+          "nombre": "LavenderH"
+        },
+        {
+          "id": 24,
+          "nombre": "Lemongrass"
+        },
+        {
+          "id": 25,
+          "nombre": "Mint"
+        },
+        {
+          "id": 26,
+          "nombre": "Peach Hibiscus"
+        },
+        {
+          "id": 27,
+          "nombre": "Peppermint"
+        },
+        {
+          "id": 28,
+          "nombre": "Peppermint Green Ginger"
+        },
+        {
+          "id": 29,
+          "nombre": "Sage"
+        },
+        {
+          "id": 30,
+          "nombre": "Virginia"
+        },
+        {
+          "id": 31,
+          "nombre": "Wild Forest"
+        }
+      ]
+    },
+    "smoothies": [
+      {
+        "id": 32,
+        "nombre": "Strawberry Banana",
+        "precio": "5.00"
+      },
+      {
+        "id": 33,
+        "nombre": "Mix Berry",
+        "precio": "5.00"
+      },
+      {
+        "id": 34,
+        "nombre": "Mango",
+        "precio": "5.00"
+      }
+    ]
+  },
+  "sweet_crepes": [
+    {
+      "id": 35,
+      "nombre": "Banana Caramel",
+      "precio": "6.50"
+    },
+    {
+      "id": 36,
+      "nombre": "Hot Apple",
+      "precio": "6.50"
+    },
+    {
+      "id": 37,
+      "nombre": "Maple Butter",
+      "precio": "6.00"
+    },
+    {
+      "id": 38,
+      "nombre": "Mixed Berry",
+      "precio": "7.00"
+    },
+    {
+      "id": 39,
+      "nombre": "Peaches & Cream",
+      "precio": "6.50"
+    },
+    {
+      "id": 40,
+      "nombre": "French Vanilla",
+      "precio": "6.00"
+    }
+  ],
+  "savoury_crepes": [
+    {
+      "id": 41,
+      "nombre": "Crepe Omelette",
+      "descripcion": "Eggs, Marble Cheddar Cheese",
+      "precio": "8.00"
+    },
+    {
+      "id": 42,
+      "nombre": "Three Cheeses",
+      "descripcion": "White, Marble Cheddar, Feta Cheese",
+      "precio": "8.50"
+    },
+    {
+      "id": 43,
+      "nombre": "Mediterranean",
+      "descripcion": "Eggs, Spinach, Roasted-Pepper, Feta Cheese",
+      "precio": "9.00"
+    },
+    {
+      "id": 44,
+      "nombre": "Spinach Ricotta",
+      "descripcion": "Spinach, Ricotta Cheese, White Cheddar Cheese",
+      "precio": "8.50"
+    },
+    {
+      "id": 45,
+      "nombre": "Chicken Mushroom",
+      "descripcion": "Chicken, Mushroom, White Sauce, White Cheddar",
+      "precio": "9.50"
+    },
+    {
+      "id": 46,
+      "nombre": "Montreal Smoked Meat",
+      "descripcion": "Montreal Roast Beef over Marble Cheese",
+      "precio": "10.00"
+    },
+    {
+      "id": 47,
+      "nombre": "Italian",
+      "descripcion": "Ground Beef and Red Sauce over Marble Cheese",
+      "precio": "9.00"
+    },
+    {
+      "id": 48,
+      "nombre": "Tuna Melt",
+      "descripcion": "Tuna, House Mayo, White Cheddar Cheese",
+      "precio": "8.50"
+    },
+    {
+      "id": 49,
+      "nombre": "Crepe of the Month",
+      "descripcion": "Coming Soon!"
+    }
+  ]
+}
