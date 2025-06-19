@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchProductsFromSheet } from '../services/productService';
+import { fetchProducts } from '../services/sheetService'; // Updated import
 import ProductCard from './ProductCard';
 import Pagination from './Pagination';
 import Lightbox from './Lightbox';
@@ -15,8 +15,8 @@ const GallerySection = () => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        setLoading(true); // Ensure loading is true at the start
-        const fetchedProducts = await fetchProductsFromSheet();
+        setLoading(true);
+        const fetchedProducts = await fetchProducts(); // Use the new function
         setProducts(fetchedProducts);
       } catch (e) {
         setError(e);
