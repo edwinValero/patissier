@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import MenuItem from './MenuItem';
 import { ChevronDown } from 'lucide-react';
 
-const MenuCategory = ({ title, items }) => {
-  const [isExpanded, setIsExpanded] = useState(true); // Start expanded by default
+const MenuCategory = ({ title, items, expanded = false }) => {
+  const [isExpanded, setIsExpanded] = useState(expanded); // Start expanded by default
 
   const formatTitle = (str) => {
     return str

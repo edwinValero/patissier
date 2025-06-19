@@ -34,10 +34,11 @@ const Footer = () => {
         <div className='flex flex-col items-center sm:flex-row sm:justify-between'>
           <div className='text-center sm:text-left mb-4 sm:mb-0'>
             <a href='/' className='text-2xl font-bold'>
-              Patissier
+              JC Patissier
             </a>
             <p className='text-sm text-color4'>
-              &copy; {new Date().getFullYear()} Patissier. All rights reserved.
+              &copy; {new Date().getFullYear()} JC Patissier. All rights
+              reserved.
             </p>
           </div>
           <div className='flex flex-col items-center sm:flex-row sm:items-center gap-4'>

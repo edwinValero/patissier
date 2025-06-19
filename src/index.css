@@ -1,11 +1,19 @@
 @import "tailwindcss";
-
-@theme {
+/*
   --color-color1: #e04c30;
   --color-color2: #e8795f;
   --color-color3: #f0a58d;
   --color-color4: #f7d2bc;
   --color-color5: #ffffea;
+  
+*/
+@theme {
+
+  --color-color1: #99582a;
+  --color-color2: #432818;
+  --color-color3: #bb9457;
+  --color-color4: #ffe6a7;
+  --color-color5: #fdfcdc;
 
   --font-script: Great Vibes, cursive;
   --font-body: Playfair Display, sans-serif;

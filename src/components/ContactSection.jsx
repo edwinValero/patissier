@@ -24,7 +24,7 @@ const getIcon = (name) => {
 };
 
 const ContactSection = () => {
-  const { address, phone, email, socialLinks } = businessData;
+  const { address, phone, socialLinks, email } = businessData;
 
   const contactInfo = [
     {

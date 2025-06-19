@@ -13,7 +13,7 @@ const MenuSection = () => {
           <div className='w-24 h-1 bg-color2 mx-auto mt-4'></div>
         </div>
 
-        <MenuCategory title='Drinks Menu' items={drinks} />
+        <MenuCategory title='Drinks Menu' items={drinks} expanded={true} />
         <MenuCategory title='Sweet Crepes' items={sweet_crepes} />
         <MenuCategory title='Savoury Crepes' items={savoury_crepes} />
       </div>

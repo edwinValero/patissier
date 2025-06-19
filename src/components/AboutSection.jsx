@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutImage from '../assets/images/products/pastel_3.png';
+import AboutImage from '../assets/images/products/bakery_1.jpeg';
 
 const AboutSection = () => {
   return (
@@ -19,9 +19,9 @@ const AboutSection = () => {
           </div>
           <div className='md:w-1/2 text-lg text-gray-700'>
             <p className='mb-4'>
-              At <span className='font-bold text-color1'>Patissier</span>, every
-              dessert is a work of art, crafted with love, tradition, and the
-              freshest ingredients. Our story began in a small kitchen, with
+              At <span className='font-bold text-color1'>JC Patissier</span>,
+              every dessert is a work of art, crafted with love, tradition, and
+              the freshest ingredients. Our story began in a small kitchen, with
               family recipes passed down through generations.
             </p>
             <p>

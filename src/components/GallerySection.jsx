@@ -10,10 +10,13 @@ const GallerySection = () => {
 
   useEffect(() => {
     // Importa todas las imágenes de la carpeta de productos dinámicamente
-    const imageModules = import.meta.glob('/src/assets/images/products/*.png', {
-      eager: true,
-      as: 'url',
-    });
+    const imageModules = import.meta.glob(
+      '/src/assets/images/products/*.jpeg',
+      {
+        eager: true,
+        as: 'url',
+      }
+    );
     const imageList = Object.values(imageModules);
     setImages(imageList);
   }, []);
