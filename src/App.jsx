@@ -13,9 +13,9 @@ function App() {
       <Header />
       <main>
         <HeroBanner />
-        <AboutSection />
-        <MenuSection />
         <GallerySection />
+        <MenuSection />
+        <AboutSection />
         <MapEmbed />
         <ContactSection />
       </main>

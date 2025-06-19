@@ -1,103 +1,123 @@
-import React, { useState, useEffect, useRef } from 'react';
-import GalleryImage from './GalleryImage';
+import React, { useState, useEffect } from 'react';
+import { fetchProductsFromSheet } from '../services/productService';
+import ProductCard from './ProductCard';
+import Pagination from './Pagination';
 import Lightbox from './Lightbox';
 
 const GallerySection = () => {
-  const [images, setImages] = useState([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(null);
-  const [visibleImageCount, setVisibleImageCount] = useState(6); // Initial count changed to 6
-  const galleryRef = useRef(null); // Create a ref for the gallery section
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentProductIndex, setCurrentProductIndex] = useState(null);
+  const productsPerPage = 10;
 
   useEffect(() => {
-    // Importa todas las imágenes de la carpeta de productos dinámicamente
-    const imageModules = import.meta.glob(
-      '/src/assets/images/products/*.jpeg',
-      {
-        eager: true,
-        as: 'url',
+    const loadProducts = async () => {
+      try {
+        setLoading(true); // Ensure loading is true at the start
+        const fetchedProducts = await fetchProductsFromSheet();
+        setProducts(fetchedProducts);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
       }
-    );
-    const imageList = Object.values(imageModules);
-    setImages(imageList);
+    };
+
+    loadProducts();
   }, []);
 
+  // Loading State
+  if (loading) {
+    return (
+      <section id='gallery' className='py-20 bg-color4 text-center'>
+        <div className='container mx-auto px-6'>
+          <h2 className='text-4xl font-bold text-color1 mb-4'>
+            Product Catalog
+          </h2>
+          <p className='text-2xl text-gray-600'>
+            Loading our delicious products...
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  // Error State
+  if (error) {
+    return (
+      <section id='gallery' className='py-20 bg-color4 text-center'>
+        <div className='container mx-auto px-6'>
+          <h2 className='text-4xl font-bold text-color1 mb-4'>
+            Product Catalog
+          </h2>
+          <div
+            className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4'
+            role='alert'
+          >
+            <p className='font-bold'>We're working on this section!</p>
+            <p>
+              There was a problem loading our products. Please check back later.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Success State
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   const openLightbox = (index) => {
-    setCurrentImageIndex(index);
+    const actualIndex = indexOfFirstProduct + index;
+    setCurrentProductIndex(actualIndex);
   };
 
   const closeLightbox = () => {
-    setCurrentImageIndex(null);
-  };
-
-  const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handleShowMore = () => {
-    setVisibleImageCount((prevCount) => prevCount + 6); // Show 6 more images
-  };
-
-  const handleShowLess = () => {
-    setVisibleImageCount(6); // Reset to show only 6 images
-    if (galleryRef.current) {
-      galleryRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll to the top of the gallery
-    }
+    setCurrentProductIndex(null);
   };
 
   return (
-    <section id='gallery' ref={galleryRef} className='py-20 bg-color4'>
-      {' '}
-      {/* Assign ref to the section */}
+    <section id='gallery' className='py-20 bg-color4'>
       <div className='container mx-auto px-6'>
         <div className='text-center mb-12'>
-          <h2 className='text-4xl font-bold text-color1'>Our Gallery</h2>
+          <h2 className='text-4xl font-bold text-color1'>Product Catalog</h2>
           <div className='w-24 h-1 bg-color2 mx-auto mt-4'></div>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
-          {images.slice(0, visibleImageCount).map((src, index) => (
-            <GalleryImage
-              key={index}
-              src={src}
-              alt={`Gallery image ${index + 1}`}
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
+          {currentProducts.map((product, index) => (
+            <ProductCard
+              key={product.id}
+              product={product}
               onOpen={() => openLightbox(index)}
             />
           ))}
         </div>
-        <div className='text-center mt-12 flex justify-center gap-4'>
-          {visibleImageCount < images.length && (
-            <button
-              onClick={handleShowMore}
-              className='bg-color1 hover:bg-color2 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300'
-            >
-              Show More
-            </button>
-          )}
-          {visibleImageCount > 6 && (
-            <button
-              onClick={handleShowLess}
-              className='bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300'
-            >
-              Show Less
-            </button>
-          )}
-        </div>
-      </div>
-      {currentImageIndex !== null && (
-        <Lightbox
-          src={images[currentImageIndex]}
-          alt={`Gallery image ${currentImageIndex + 1}`}
-          onClose={closeLightbox}
-          onPrev={goToPrevious}
-          onNext={goToNext}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
         />
+      </div>
+      {currentProductIndex !== null && products.length > 0 && (
+        <div className='hidden md:block'>
+          <Lightbox
+            src={products[currentProductIndex].imageUrl}
+            alt={products[currentProductIndex].name}
+            onClose={closeLightbox}
+          />
+        </div>
       )}
     </section>
   );

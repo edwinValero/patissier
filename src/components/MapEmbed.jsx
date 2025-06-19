@@ -23,7 +23,7 @@ const MapEmbed = () => {
               allowFullScreen=''
               loading='lazy'
               referrerPolicy='no-referrer-when-downgrade'
-              title='Ubicación de JC Patissier'
+              title='JC Patissier Location'
             ></iframe>
           </div>
           {/* Opening Hours Section */}
