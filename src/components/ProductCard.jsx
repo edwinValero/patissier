@@ -22,9 +22,10 @@ const ProductCard = ({ product, onOpen }) => {
   }, [imageUrl]);
 
   return (
-    <div
-      className='bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer'
+    <button
+      className='bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 w-full text-left'
       onClick={onOpen}
+      aria-label={`View details for ${name}`}
     >
       <div className='relative h-48'>
         {isLoading && (
@@ -40,7 +41,10 @@ const ProductCard = ({ product, onOpen }) => {
           }`}
         />
         {isSeasonal && (
-          <span className='absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full'>
+          <span
+            className='absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full'
+            aria-hidden={!isSeasonal}
+          >
             Seasonal
           </span>
         )}
@@ -48,7 +52,7 @@ const ProductCard = ({ product, onOpen }) => {
       <div className='p-4'>
         <h3 className='text-lg font-semibold text-gray-800'>{name}</h3>
       </div>
-    </div>
+    </button>
   );
 };
 
