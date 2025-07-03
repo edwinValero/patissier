@@ -14,7 +14,7 @@ const MapEmbed = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-12 items-center'>
           {/* Map Section */}
-          <div className='relative w-full h-96 rounded-lg shadow-2xl overflow-hidden md:col-span-3'>
+          <figure className='relative w-full h-96 rounded-lg shadow-2xl overflow-hidden md:col-span-3'>
             <iframe
               src={mapUrl}
               width='100%'
@@ -25,9 +25,9 @@ const MapEmbed = () => {
               referrerPolicy='no-referrer-when-downgrade'
               title='JC Patissier Location'
             ></iframe>
-          </div>
+          </figure>
           {/* Opening Hours Section */}
-          <div className='bg-white p-6 rounded-lg shadow-lg md:col-span-1'>
+          <aside className='bg-white p-6 rounded-lg shadow-lg md:col-span-1'>
             <h3 className='text-2xl font-bold text-color2 mb-4 flex items-center'>
               <Clock className='w-6 h-6 mr-2' />
               Opening Hours
@@ -51,7 +51,7 @@ const MapEmbed = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

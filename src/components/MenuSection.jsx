@@ -17,8 +17,6 @@ const MenuSection = () => {
         setLoading(true);
         const fetchedMenu = await fetchMenu();
         setMenuData(fetchedMenu);
-        console.log('menuData');
-        console.log(menuData);
       } catch (e) {
         setError(e);
       } finally {

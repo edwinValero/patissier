@@ -53,7 +53,7 @@ const ContactSection = () => {
         </div>
 
         <div className='max-w-4xl mx-auto'>
-          <div className='bg-white p-8 rounded-lg shadow-lg mb-12'>
+          <address className='bg-white p-8 rounded-lg shadow-lg mb-12 not-italic'>
             <div className='space-y-6'>
               {contactInfo.map((info, index) => (
                 <div key={index} className='flex items-center gap-4'>
@@ -62,7 +62,7 @@ const ContactSection = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </address>
 
           <div className='text-center'>
             <h3 className='text-2xl font-bold text-color1 mb-6'>

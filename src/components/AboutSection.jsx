@@ -9,7 +9,7 @@ const AboutSection = () => {
           <h2 className='text-4xl font-bold text-color1'>Our Story</h2>
           <div className='w-24 h-1 bg-color2 mx-auto mt-4'></div>
         </div>
-        <div className='flex flex-col md:flex-row items-center gap-12'>
+        <article className='flex flex-col md:flex-row items-center gap-12'>
           <div className='md:w-1/2'>
             <img
               src={AboutImage}
@@ -31,7 +31,7 @@ const AboutSection = () => {
               unforgettable moments.
             </p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );
