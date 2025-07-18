@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutImage from '../assets/images/hero.jpeg';
 
 const AboutSection = () => {
+  const heroImageUrl = `${import.meta.env.BASE_URL}images/hero.jpeg`;
   return (
     <section id='about-us' className='py-20 bg-color5'>
       <div className='container mx-auto px-6'>
@@ -12,7 +12,7 @@ const AboutSection = () => {
         <article className='flex flex-col md:flex-row items-center gap-12'>
           <div className='md:w-1/2'>
             <img
-              src={AboutImage}
+              src={heroImageUrl}
               alt='Artisan pastry'
               className='rounded-lg shadow-2xl w-full h-auto object-cover'
             />

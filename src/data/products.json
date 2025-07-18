@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Almond Croissant",
+      "imageUrl": "/images/products/croissant_almond.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 2,
+      "name": "Muffin",
+      "imageUrl": "/images/products/mufin.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 3,
+      "name": "Pastry",
+      "imageUrl": "/images/products/pastry.webp",
+      "isSeasonal": true
+    },
+    {
+      "id": 4,
+      "name": "Berries Dessert",
+      "imageUrl": "/images/products/postre_berries.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 5,
+      "name": "Coffee Dessert",
+      "imageUrl": "/images/products/postre_cafe.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 6,
+      "name": "Chocolate Dessert",
+      "imageUrl": "/images/products/postre_chocolate.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 7,
+      "name": "Almond Croissant 2",
+      "imageUrl": "/images/products/croissant_almond.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 8,
+      "name": "Muffin 2",
+      "imageUrl": "/images/products/mufin.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 9,
+      "name": "Pastry 2",
+      "imageUrl": "/images/products/pastry.webp",
+      "isSeasonal": true
+    },
+    {
+      "id": 10,
+      "name": "Berries Dessert 2",
+      "imageUrl": "/images/products/postre_berries.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 11,
+      "name": "Coffee Dessert 2",
+      "imageUrl": "/images/products/postre_cafe.webp",
+      "isSeasonal": false
+    },
+    {
+      "id": 12,
+      "name": "Chocolate Dessert 2",
+      "imageUrl": "/images/products/postre_chocolate.webp",
+      "isSeasonal": false
+    }
+  ]
+}

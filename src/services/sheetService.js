@@ -24,13 +24,15 @@ const fetchWithRetry = async (url, retries = 3, delay = 1000) => {
 };
 
 const fetchFromSheet = async (sheetId, sheetName, cacheKey, formatter) => {
-  const cachedData = localStorage.getItem(cacheKey);
-
-  if (cachedData) {
-    const { data, expiry } = JSON.parse(cachedData);
-    if (new Date().getTime() < expiry) {
-      console.log(`Returning cached data for ${cacheKey}.`);
-      return data;
+  // Check if localStorage is available
+  if (typeof localStorage !== 'undefined') {
+    const cachedData = localStorage.getItem(cacheKey);
+    if (cachedData) {
+      const { data, expiry } = JSON.parse(cachedData);
+      if (new Date().getTime() < expiry) {
+        console.log(`Returning cached data for ${cacheKey}.`);
+        return data;
+      }
     }
   }
 
@@ -61,11 +63,14 @@ const fetchFromSheet = async (sheetId, sheetName, cacheKey, formatter) => {
 
     const formattedData = formatter(rows);
 
-    const cachePayload = {
-      data: formattedData,
-      expiry: getMidnightTimestamp(),
-    };
-    localStorage.setItem(cacheKey, JSON.stringify(cachePayload));
+    // Check if localStorage is available before setting item
+    if (typeof localStorage !== 'undefined') {
+      const cachePayload = {
+        data: formattedData,
+        expiry: getMidnightTimestamp(),
+      };
+      localStorage.setItem(cacheKey, JSON.stringify(cachePayload));
+    }
 
     return formattedData;
   } catch (error) {
@@ -139,3 +144,15 @@ export const fetchMenu = () => {
   const sheetId = '1zPWdUt1ebLiMLEjxoctpokXLLBEVLmRG2P9L5e_NV-0';
   return fetchFromSheet(sheetId, 'Sheet1', 'menuCache', menuFormatter);
 };
+
+// Helper to run fetchMenu from the command line
+if (typeof window === 'undefined') {
+  (async () => {
+    try {
+      const menu = await fetchMenu();
+      console.log(JSON.stringify(menu, null, 2));
+    } catch (error) {
+      console.error('Failed to fetch menu:', error);
+    }
+  })();
+}

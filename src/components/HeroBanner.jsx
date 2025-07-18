@@ -1,12 +1,13 @@
 import React from 'react';
-import HeroImage from '../assets/images/hero.jpeg';
 
 const HeroBanner = () => {
+  const heroImageUrl = `${import.meta.env.BASE_URL}images/hero.jpeg`;
+
   return (
     <section
       id='home'
       className='relative h-screen bg-cover bg-center flex items-center justify-center'
-      style={{ backgroundImage: `url(${HeroImage})` }}
+      style={{ backgroundImage: `url(${heroImageUrl})` }}
     >
       <div className='absolute inset-0 bg-black opacity-40'></div>
       <div className='relative z-10 text-center text-white p-4'>

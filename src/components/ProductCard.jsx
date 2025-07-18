@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const ProductCard = ({ product, onOpen }) => {
   const { name, imageUrl, isSeasonal } = product;
-  const [imageSrc, setImageSrc] = useState(imageUrl);
+  const fullImageUrl = `${import.meta.env.BASE_URL}${
+    imageUrl.startsWith('/') ? imageUrl.substring(1) : imageUrl
+  }`;
+  const [imageSrc, setImageSrc] = useState(fullImageUrl);
   const [isLoading, setIsLoading] = useState(true);
 
   const placeholderImage =
@@ -10,16 +13,16 @@ const ProductCard = ({ product, onOpen }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = imageUrl;
+    img.src = fullImageUrl;
     img.onload = () => {
-      setImageSrc(imageUrl);
+      setImageSrc(fullImageUrl);
       setIsLoading(false);
     };
     img.onerror = () => {
       setImageSrc(placeholderImage);
       setIsLoading(false);
     };
-  }, [imageUrl]);
+  }, [fullImageUrl]);
 
   return (
     <button

@@ -3,6 +3,9 @@ import { X } from 'lucide-react';
 
 const Lightbox = ({ src, alt, onClose }) => {
   const closeButtonRef = useRef(null);
+  const fullImageUrl = `${import.meta.env.BASE_URL}${
+    src.startsWith('/') ? src.substring(1) : src
+  }`;
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -38,7 +41,7 @@ const Lightbox = ({ src, alt, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <img
-          src={src}
+          src={fullImageUrl}
           alt={alt}
           className='max-h-[80vh] max-w-full rounded-lg'
         />

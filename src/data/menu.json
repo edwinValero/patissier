@@ -1,0 +1,298 @@
+{
+  "drinks": [
+    {
+      "name": "Coffee",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Fresh Brewed Dark Roast",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Caffe Au Lait",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Espresso (Single - Double)",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Caffe Americano",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Cappuccino",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Caffe Latte",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Vanilla Latte",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Caramel Latte",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Matcha Latte",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Mocha Latte",
+      "description": "(Milk, Dark, White Chocolate)",
+      "isTitle": false
+    },
+    {
+      "name": "Decaf Option",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Dandelion Tea",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Natural Decaffeinated Tea Root",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Hot Chocolate",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Milk Hot Chocolate",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Dark Hot Chocolate",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "White Hot Chocolate",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Tea",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Black Yorkshire Harrogate",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Cream of Earl Gray",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Chai",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Green Jasmine",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Herbal Tea",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Chamomile",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Cherry Rose Green",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Ginger",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Lavender",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Lemongrass",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Mint",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Peach Hibiscus",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Peppermint",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Peppermint Green Ginger",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Sage",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Virginia",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Wild Forest",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Smoothies",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Strawberry Banana",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Mix Berry",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Mango",
+      "description": "",
+      "isTitle": false
+    }
+  ],
+  "crepes": [
+    {
+      "name": "Sweet Crepes",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Banana Caramel",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Hot Apple",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Maple Butter",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Mixed Berry",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Peaches & Cream",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "French Vanilla",
+      "description": "",
+      "isTitle": false
+    },
+    {
+      "name": "Savoury Crepes",
+      "description": "",
+      "isTitle": true
+    },
+    {
+      "name": "Crepe Omelette",
+      "description": "Eggs, Marble Cheddar Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Three Cheeses",
+      "description": "White, Marble Cheddar, Feta Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Mediterranean",
+      "description": "Eggs, Spinach, Roasted-Pepper, Feta Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Spinach Ricotta",
+      "description": "Spinach, Ricotta Cheese, White Cheddar Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Chicken Mushroom",
+      "description": "Chicken, Mushroom, White Sauce, White Cheddar",
+      "isTitle": false
+    },
+    {
+      "name": "Montreal Smoked Meat",
+      "description": "Montreal Roast Beef over Marble Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Italian",
+      "description": "Ground Beef and Red Sauce over Marble Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Tuna Melt",
+      "description": "Tuna, House Mayo, White Cheddar Cheese",
+      "isTitle": false
+    },
+    {
+      "name": "Crepe of the Month",
+      "description": "Coming Soon!",
+      "isTitle": false
+    }
+  ],
+  "iceCreams": [
+    {
+      "name": "Coming Soon!",
+      "description": "New flavors arriving this summer.",
+      "isTitle": false
+    }
+  ]
+}

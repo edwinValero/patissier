@@ -1,86 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { fetchProducts } from '../services/sheetService'; // Updated import
+import React, { useState } from 'react';
 import ProductCard from './ProductCard';
 import Pagination from './Pagination';
 import Lightbox from './Lightbox';
+import productData from '../data/products.json';
 
 const GallerySection = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProductIndex, setCurrentProductIndex] = useState(null);
+  const [isFading, setIsFading] = useState(false);
   const productsPerPage = 10;
+  const { products } = productData;
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        setLoading(true);
-        const fetchedProducts = await fetchProducts(); // Use the new function
-        setProducts(fetchedProducts);
-      } catch (e) {
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // Memoize the current products to prevent re-calculation on every render
+  const currentProducts = React.useMemo(() => {
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    return products.slice(indexOfFirstProduct, indexOfLastProduct);
+  }, [currentPage, products]);
 
-    loadProducts();
-  }, []);
-
-  // Loading State
-  if (loading) {
-    return (
-      <section id='gallery' className='py-20 bg-color4 text-center'>
-        <div className='container mx-auto px-6'>
-          <h2 className='text-4xl font-bold text-color1 mb-4'>
-            Product Catalog
-          </h2>
-          <p className='text-2xl text-gray-600'>
-            Loading our delicious products...
-          </p>
-        </div>
-      </section>
-    );
-  }
-
-  // Error State
-  if (error) {
-    return (
-      <section id='gallery' className='py-20 bg-color4 text-center'>
-        <div className='container mx-auto px-6'>
-          <h2 className='text-4xl font-bold text-color1 mb-4'>
-            Product Catalog
-          </h2>
-          <div
-            className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4'
-            role='alert'
-          >
-            <p className='font-bold'>We're working on this section!</p>
-            <p>
-              There was a problem loading our products. Please check back later.
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // Success State
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentPage(pageNumber);
+      setIsFading(false);
+    }, 300); // Match this duration with the CSS transition
   };
 
   const openLightbox = (index) => {
-    const actualIndex = indexOfFirstProduct + index;
+    const actualIndex = (currentPage - 1) * productsPerPage + index;
     setCurrentProductIndex(actualIndex);
   };
 
@@ -95,7 +44,11 @@ const GallerySection = () => {
           <h2 className='text-4xl font-bold text-color1'>Product Catalog</h2>
           <div className='w-24 h-1 bg-color2 mx-auto mt-4'></div>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 transition-opacity duration-300 ${
+            isFading ? 'opacity-0' : 'opacity-100'
+          }`}
+        >
           {currentProducts.map((product, index) => (
             <ProductCard
               key={product.id}
