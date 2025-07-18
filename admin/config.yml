@@ -1,7 +1,8 @@
 local_backend: false
 backend:
   branch: main
-  name: git-gateway
+  repo: edwinValero/patissier
+  name: github
 media_folder: public/images/products
 public_folder: /images/products
 collections:
