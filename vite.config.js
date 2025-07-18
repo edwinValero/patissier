@@ -15,8 +15,12 @@ export default defineConfig({
     decap({
       config: {
         backend: {
-          name: 'git-gateway',
+          name: 'github',
           branch: 'main',
+          repo: 'edwinValero/patissier',
+          auth_type: 'implicit',
+          app_id: 'Ov23liFmHxnLzpBHA6iF',
+          auth_endpoint: 'auth',
         },
         media_folder: 'public/images/products',
         public_folder: '/images/products',
