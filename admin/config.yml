@@ -4,6 +4,7 @@ backend:
   repo: edwinValero/patissier
   auth_type: implicit
   app_id: Ov23liFmHxnLzpBHA6iF
+  auth_endpoint: auth
   name: github
 media_folder: public/images/products
 public_folder: /images/products
