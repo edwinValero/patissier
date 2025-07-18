@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: patissier CI/CD
 
 on:
   push:
@@ -11,19 +11,32 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm run build --if-present
+        cache: 'npm'     
+    - run: npm install
+    - run: npm run build # This will create the 'dist' directory
+
+  deploy:
+    needs: build # This job depends on the 'build' job completing successfully
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist # The directory where Vite outputs the built files
+        # If your project is deployed to a subpath (like /patissier/ as per your vite.config.js),
+        # ensure your base path is correctly configured in vite.config.js.
+        # The 'publish_dir' should point to the output of your 'npm run build' command.
+
