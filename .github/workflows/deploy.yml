@@ -29,14 +29,13 @@ jobs:
   deploy:
     needs: build # This job depends on the 'build' job completing successfully
     runs-on: ubuntu-latest
+    # Add these permissions to allow the GITHUB_TOKEN to push to gh-pages
+    permissions:
+      contents: write # Grant write permission for repository contents
     steps:
     - uses: actions/checkout@v4
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist # The directory where Vite outputs the built files
-        # If your project is deployed to a subpath (like /patissier/ as per your vite.config.js),
-        # ensure your base path is correctly configured in vite.config.js.
-        # The 'publish_dir' should point to the output of your 'npm run build' command.
-
+        publish_dir: ./dist
